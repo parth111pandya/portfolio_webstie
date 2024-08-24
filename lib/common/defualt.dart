@@ -15,14 +15,14 @@ class CustomContainer extends StatelessWidget {
       height: Const(context).height(),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40),
-        color: Colors.blueGrey.shade300,
+        color: Colors.black,
       ),
       child: Center(
         child: Text(
           pageName,
           style: const TextStyle(
             fontSize: 30,
-            color: Colors.red,
+            color: Colors.white,
           ),
         ),
       ),

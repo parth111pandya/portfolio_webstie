@@ -52,7 +52,9 @@ class _AppBarDesktopViewState extends State<AppBarDesktopView> {
       width: Const(context).width() / 1.2,
       height: Const(context).height() / 13,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: locator<NavigationService>().selectedIndex.isEven
+            ? Colors.black
+            : Colors.white70,
         borderRadius: BorderRadius.circular(40),
       ),
       child: Row(

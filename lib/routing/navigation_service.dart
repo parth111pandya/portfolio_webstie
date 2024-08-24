@@ -33,12 +33,21 @@ class NavigationService {
     );
   }
 
+  int customRound(double value) {
+    // Determine if the value is within a specific range
+    if (value % 1 < 0.2) {
+      return value.floor(); // Round down
+    } else {
+      return value.ceil(); // Round up
+    }
+  }
+
   num getCurrentPageName() {
-    num viewpoint = scrollController.position.viewportDimension;
-    num offset = scrollController.offset;
-    num maxScrollExtent = scrollController.position.maxScrollExtent;
-    num index = (maxScrollExtent - offset) / viewpoint;
-    selectedIndex = index.round();
+    double viewpoint = scrollController.position.viewportDimension;
+    double offset = scrollController.offset;
+    double maxScrollExtent = scrollController.position.maxScrollExtent;
+    double index = (maxScrollExtent - offset) / viewpoint;
+    selectedIndex = customRound(index);
 
     for (var element in menuForAppBar) {
       if (element.index == selectedIndex) {
