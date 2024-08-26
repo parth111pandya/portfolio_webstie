@@ -61,7 +61,8 @@ class HomeDesktopView extends StatelessWidget {
                 return Text(
                   letter,
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize:
+                        Theme.of(context).textTheme.displayLarge!.fontSize,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey.shade500,
                   ),
@@ -90,8 +91,8 @@ class HomeDesktopView extends StatelessWidget {
                 String letter = entry.value;
                 return Text(
                   letter,
-                  style: const TextStyle(
-                    fontSize: 60,
+                  style: TextStyle(
+                    fontSize: Theme.of(context).textTheme.titleLarge!.fontSize,
                     fontWeight: FontWeight.w900,
                     color: Colors.black,
                   ),
@@ -112,10 +113,10 @@ class HomeDesktopView extends StatelessWidget {
             SizedBox(
               height: Const(context).height() / 18,
             ),
-            const Text(
+            Text(
               "I’m the Da Vinci of Flutter, blending art and logic into digital masterpieces.Turning code into creations that are not just functional but truly inspirational. Because every app should be as intuitive as it is beautiful.",
               style: TextStyle(
-                fontSize: 30,
+                fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
                 fontWeight: FontWeight.w400,
               ),
               textAlign: TextAlign.center,
@@ -144,7 +145,7 @@ class HomeDesktopView extends StatelessWidget {
                     Stack(
                       children: [
                         Container(
-                          width: 135,
+                          width: 160,
                           height: 43,
                           decoration: BoxDecoration(
                             color: Colors.black,
@@ -182,7 +183,7 @@ class HomeDesktopView extends StatelessWidget {
                     Stack(
                       children: [
                         Container(
-                          width: 145,
+                          width: 101,
                           height: 43,
                           decoration: BoxDecoration(
                             color: Colors.black,
@@ -205,7 +206,7 @@ class HomeDesktopView extends StatelessWidget {
                             // elevation: 10,
                           ),
                           child: const Text(
-                            'View Portfolio',
+                            'Resume',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -355,7 +356,7 @@ class HomeMobileView extends StatelessWidget {
                 return Text(
                   letter,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: Theme.of(context).textTheme.labelSmall!.fontSize,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey.shade500,
                   ),
@@ -384,8 +385,8 @@ class HomeMobileView extends StatelessWidget {
                 String letter = entry.value;
                 return Text(
                   letter,
-                  style: const TextStyle(
-                    fontSize: 30,
+                  style: TextStyle(
+                    fontSize: Theme.of(context).textTheme.titleSmall!.fontSize,
                     fontWeight: FontWeight.w900,
                     color: Colors.black,
                   ),
@@ -406,11 +407,10 @@ class HomeMobileView extends StatelessWidget {
             SizedBox(
               height: Const(context).height() / 18,
             ),
-            const Text(
+            Text(
               "I’m the Da Vinci of Flutter, blending art and logic into digital masterpieces.Turning code into creations that are not just functional but truly inspirational. Because every app should be as intuitive as it is beautiful.",
               style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w400,
+                fontSize: Theme.of(context).textTheme.bodySmall!.fontSize,
               ),
               textAlign: TextAlign.start,
             )
@@ -427,87 +427,43 @@ class HomeMobileView extends StatelessWidget {
                   delay: const Duration(milliseconds: 670),
                 ),
             SizedBox(
-              height: Const(context).height() / 10,
+              height: Const(context).height() / 30,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Stack(
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 135,
-                          height: 43,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange,
-                            // shadowColor: Colors.black,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 15,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            // elevation: 10,
-                          ),
-                          child: const Text(
-                            'Get In Touch',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
+                    Container(
+                      width: 160,
+                      height: 43,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
                     ),
-                    SizedBox(
-                      width: Const(context).width() / 50,
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          width: 145,
-                          height: 43,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(30),
-                          ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        // shadowColor: Colors.black,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 15,
                         ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            side: BorderSide(),
-                            // shadowColor: Colors.black,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 15,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            // elevation: 10,
-                          ),
-                          child: const Text(
-                            'View Portfolio',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                      ],
+                        // elevation: 10,
+                      ),
+                      child: const Text(
+                        'Get In Touch',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 )
@@ -522,6 +478,57 @@ class HomeMobileView extends StatelessWidget {
                       duration: 1.seconds,
                       curve: Curves.easeOut,
                       delay: const Duration(milliseconds: 1300),
+                    ),
+                SizedBox(
+                  height: Const(context).height() / 30,
+                ),
+                Stack(
+                  children: [
+                    Container(
+                      width: 101,
+                      height: 43,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        side: BorderSide(),
+                        // shadowColor: Colors.black,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 15,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        // elevation: 10,
+                      ),
+                      child: const Text(
+                        'Resume',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+                    .animate()
+                    .fadeIn(
+                      duration: 1.seconds, // Fade-in duration
+                      delay: const Duration(milliseconds: 1300),
+                    )
+                    .slide(
+                      begin: const Offset(0, 1), // Slide from bottom to top
+                      end: const Offset(0, 0), // End at the original position
+                      duration: 1.seconds,
+                      curve: Curves.easeOut,
+                      delay: const Duration(milliseconds: 1350),
                     ),
                 SizedBox(
                   height: Const(context).height() / 20,
@@ -614,7 +621,7 @@ class HomeMobileView extends StatelessWidget {
                       end: const Offset(0, 0), // End at the original position
                       duration: 1.seconds,
                       curve: Curves.easeOut,
-                      delay: const Duration(milliseconds: 1350),
+                      delay: const Duration(milliseconds: 1400),
                     ),
               ],
             ),

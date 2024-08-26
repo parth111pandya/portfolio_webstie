@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/common/app_bar.dart';
 import 'package:portfolio/common/layout_builder.dart';
+import 'package:portfolio/common/navbar/drawer/drawernav.dart';
 import 'package:portfolio/pages/about/about_page.dart';
 import 'package:portfolio/pages/contact/contact_page.dart';
 import 'package:portfolio/pages/home/home_page.dart';
@@ -31,6 +32,14 @@ class LandingPageDesktopView extends StatefulWidget {
 }
 
 class _LandingPageDesktopViewState extends State<LandingPageDesktopView> {
+  @override
+  void initState() {
+    super.initState();
+    locator<NavigationService>().scrolleTo(
+      locator<NavigationService>().projectPageKey,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,13 +93,21 @@ class LandingPageMobileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
+    return const Scaffold(
+      endDrawer: CustomNavigationDrawer(),
+      body: Stack(
+        alignment: Alignment.topCenter,
         children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                HomePage(),
+                AboutPage(),
+                WhyChooseFlutterDeveloperPage(),
+              ],
+            ),
+          ),
           AppBarMobileView(),
-          HomePage(),
-          AboutPage(),
-          WhyChooseFlutterDeveloperPage(),
         ],
       ),
     );

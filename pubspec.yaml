@@ -67,16 +67,16 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/icons/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
-
+ 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -87,11 +87,11 @@ flutter:
       fonts:
         - asset: assets/fonts/JetBrainsMono-Bold.ttf
 
-    - family: JetBrainsMono-Medium.ttf
+    - family: JetBrainsMono-Medium
       fonts:
         - asset: assets/fonts/JetBrainsMono-Medium.ttf
     
-    - family: JetBrainsMono-Regular.ttf
+    - family: JetBrainsMono-Regular
       fonts:
         - asset: assets/fonts/JetBrainsMono-Regular.ttf
   #

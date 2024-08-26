@@ -23,12 +23,15 @@ class NavigationService {
     return navigatorKey.currentState!.pushNamed(routeName);
   }
 
-  Future<dynamic> scrolleTo(GlobalKey globalKey) async {
-    await Future.delayed(const Duration(milliseconds: 500));
+  Future<dynamic> scrolleTo(
+    GlobalKey globalKey, {
+    bool isDelay = true,
+  }) async {
+    isDelay ? await Future.delayed(const Duration(milliseconds: 500)) : null;
 
     return Scrollable.ensureVisible(
       globalKey.currentContext!,
-      duration: const Duration(milliseconds: 600),
+      duration: Duration(milliseconds: isDelay ? 600 : 250),
       curve: Curves.easeInOut,
     );
   }
@@ -56,6 +59,18 @@ class NavigationService {
         element.isSelected = false;
       }
     }
+    scrolleTo(
+      selectedIndex == 4
+          ? homePageKey
+          : selectedIndex == 3
+              ? aboutPageKey
+              : selectedIndex == 2
+                  ? whyChooseFLutterDeveloperPageKey
+                  : selectedIndex == 1
+                      ? projectPageKey
+                      : contactPagerKey,
+      isDelay: false,
+    );
     return selectedIndex;
   }
 

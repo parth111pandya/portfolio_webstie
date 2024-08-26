@@ -54,7 +54,7 @@ class _AppBarDesktopViewState extends State<AppBarDesktopView> {
       decoration: BoxDecoration(
         color: locator<NavigationService>().selectedIndex.isEven
             ? Colors.black
-            : Colors.white70,
+            : Colors.white,
         borderRadius: BorderRadius.circular(40),
       ),
       child: Row(
@@ -105,25 +105,22 @@ class AppBarMobileView extends StatefulWidget {
 class _AppBarMobileViewState extends State<AppBarMobileView> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 16),
-      width: Const(context).width() / 1.1,
-      height: Const(context).height() / 20,
-      decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(40),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 16,
+        horizontal: 12,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          IconButton(
-            alignment: Alignment.topRight,
-            icon: const Icon(
-              FontAwesomeIcons.bars,
-            ),
-            onPressed: () {
+          InkWell(
+            onTap: () {
               Scaffold.of(context).openEndDrawer();
             },
+            child: const Image(
+              image: AssetImage("assets/icons/menu.png"),
+              height: 26,
+            ),
           ),
         ],
       ),
