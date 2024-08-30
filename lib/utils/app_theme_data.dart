@@ -4,22 +4,32 @@ ThemeData lightThemeData = ThemeData(
   brightness: Brightness.light,
   scaffoldBackgroundColor: Colors.black, //Colors.black,
   fontFamily: "JetBrainsMono-Medium",
+
   textTheme: TextTheme(
     //large for Desktop
     titleLarge: const TextStyle(fontSize: 50),
     bodyLarge: const TextStyle(fontSize: 25),
     displayLarge: const TextStyle(fontSize: 24),
     labelLarge: TextStyle(
-      fontSize: 16,
-      color: Colors.grey.shade500,
+      fontSize: 18,
+      color: Colors.grey.shade700,
     ),
 
     //Small for Mobile
     titleSmall: const TextStyle(fontSize: 18),
-    bodySmall: const TextStyle(fontSize: 16),
+    bodySmall: const TextStyle(fontSize: 12),
     displaySmall: const TextStyle(fontSize: 24),
     labelSmall: TextStyle(
       fontSize: 12,
+      color: Colors.grey.shade500,
+    ),
+
+//Medium for Tab
+    titleMedium: const TextStyle(fontSize: 34),
+    bodyMedium: const TextStyle(fontSize: 18),
+    displayMedium: const TextStyle(fontSize: 24),
+    labelMedium: TextStyle(
+      fontSize: 15,
       color: Colors.grey.shade500,
     ),
   ),

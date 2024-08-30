@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:portfolio/utils/const.dart';
 
 GetIt locator = GetIt.instance;
 
@@ -45,34 +44,34 @@ class NavigationService {
     }
   }
 
-  num getCurrentPageName() {
-    double viewpoint = scrollController.position.viewportDimension;
-    double offset = scrollController.offset;
-    double maxScrollExtent = scrollController.position.maxScrollExtent;
-    double index = (maxScrollExtent - offset) / viewpoint;
-    selectedIndex = customRound(index);
+  // num getCurrentPageName() {
+  //   double viewpoint = scrollController.position.viewportDimension;
+  //   double offset = scrollController.offset;
+  //   double maxScrollExtent = scrollController.position.maxScrollExtent;
+  //   double index = (maxScrollExtent - offset) / viewpoint;
+  //   selectedIndex = customRound(index);
 
-    for (var element in menuForAppBar) {
-      if (element.index == selectedIndex) {
-        element.isSelected = true;
-      } else {
-        element.isSelected = false;
-      }
-    }
-    scrolleTo(
-      selectedIndex == 4
-          ? homePageKey
-          : selectedIndex == 3
-              ? aboutPageKey
-              : selectedIndex == 2
-                  ? whyChooseFLutterDeveloperPageKey
-                  : selectedIndex == 1
-                      ? projectPageKey
-                      : contactPagerKey,
-      isDelay: false,
-    );
-    return selectedIndex;
-  }
+  //   for (var element in menuForAppBar) {
+  //     if (element.index == selectedIndex) {
+  //       element.isSelected = true;
+  //     } else {
+  //       element.isSelected = false;
+  //     }
+  //   }
+  //   scrolleTo(
+  //     selectedIndex == 4
+  //         ? homePageKey
+  //         : selectedIndex == 3
+  //             ? aboutPageKey
+  //             : selectedIndex == 2
+  //                 ? whyChooseFLutterDeveloperPageKey
+  //                 : selectedIndex == 1
+  //                     ? projectPageKey
+  //                     : contactPagerKey,
+  //     isDelay: false,
+  //   );
+  //   return selectedIndex;
+  // }
 
   void goBack() {
     return navigatorKey.currentState!.pop();

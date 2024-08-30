@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/routing/navigation_service.dart';
+import 'dart:js' as js;
 
 class Const {
   BuildContext context;
 
   Const(this.context);
 
-  double width() => MediaQuery.of(context).size.width;
-  double height() => MediaQuery.of(context).size.height;
+  double getWidth() => MediaQuery.of(context).size.width;
+  double getHeight() => MediaQuery.of(context).size.height;
+
+  double commonBottomSpace() => MediaQuery.of(context).size.height / 40;
+
+  BorderRadiusGeometry commonCurve() => const BorderRadius.vertical(
+        bottom: Radius.elliptical(100, 75),
+      );
+
+  static getGetInTouchOrContactMe() {
+    locator<NavigationService>().scrolleTo(
+      locator<NavigationService>().contactPagerKey,
+    );
+  }
+
+  static getResume() {
+    js.context.callMethod("open", [
+      "https://drive.google.com/file/d/1TuaQDr3tE7JbN1b6OiJGtUbPkV1LJyyu/view"
+    ]);
+  }
 }
 
 List<NavBarMenuModel> menuForAppBar = [

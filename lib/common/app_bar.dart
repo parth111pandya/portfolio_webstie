@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/common/layout_builder.dart';
 import 'package:portfolio/common/navbar/drawer/drawernav.dart';
 import 'package:portfolio/routing/navigation_service.dart';
@@ -26,31 +25,31 @@ class AppBarDesktopView extends StatefulWidget {
 }
 
 class _AppBarDesktopViewState extends State<AppBarDesktopView> {
-  void _handleScrollChange() {
-    setState(() {
-      locator<NavigationService>().getCurrentPageName();
-    });
-  }
+  // void _handleScrollChange() {
+  //   setState(() {
+  //     locator<NavigationService>().getCurrentPageName();
+  //   });
+  // }
 
-  void _handlePositionAttach(ScrollPosition position) {
-    position.isScrollingNotifier.addListener(_handleScrollChange);
-  }
+  // void _handlePositionAttach(ScrollPosition position) {
+  //   position.isScrollingNotifier.addListener(_handleScrollChange);
+  // }
 
-  @override
-  void initState() {
-    locator<NavigationService>().scrollController = ScrollController(
-      onAttach: _handlePositionAttach,
-    );
+  // @override
+  // void initState() {
+  //   locator<NavigationService>().scrollController = ScrollController(
+  //     onAttach: _handlePositionAttach,
+  //   );
 
-    super.initState();
-  }
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 16),
-      width: Const(context).width() / 1.2,
-      height: Const(context).height() / 13,
+      width: Const(context).getWidth() / 1.2,
+      height: Const(context).getHeight() / 13,
       decoration: BoxDecoration(
         color: locator<NavigationService>().selectedIndex.isEven
             ? Colors.black
